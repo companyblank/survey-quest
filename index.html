@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+
+<canvas id="canvas"></canvas>
+
+<head>
+
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:url"           content="https://companyblank.github.io/survey-quest" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="CompanyBlank Quick Name Survey" />
+    <meta property="og:description"   content="Take Part In Our Quest to Choose the Best Game Company Name!" />
+    <!--<meta property="og:image"         content="https://www.your-domain.com/path/image.jpg" />-->
+
+    <!-- Google Tag Manager -->
+    <script type="text/javascript" async="" src="//tagmanager.google.com/debug"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-5FLW2P9"></script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5FLW2P9');</script>
+    <!-- End Google Tag Manager -->
+
+
+    <!--<link rel="manifest" href="site.webmanifest">-->
+    <link rel="apple-touch-icon" href="icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="./css/companyblank.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+
+    <meta name="theme-color" content="#fafafa">
+    <!--<script src="worker.js"></script>-->
+</head>
+
+<body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5FLW2P9"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.3"></script>
+
+<!--[if IE]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+<![endif]-->
+
+<canvas id="bgCanvas" class="bgCanvas"></canvas>
+<canvas id="shootingCanvas" class="shootingCanvas"></canvas>
+
+<span class="is-mobile"></span>
+
+<div class="survey-current-progress">
+    <h3 class="notify-complete">Survey Completion</h3>
+    <div class="progress-circle">
+        <canvas id="currentComplete" width="70" height="70"></canvas>
+        <canvas id="currentProgressCircle" width="70" height="70"></canvas>
+    </div>
+</div>
+
+<div class="survey start">
+
+    <div class="survey-start section">
+
+        <h1>Take Part In Our Quest to Choose The Best Game Company Name</h1>
+
+        <div class="our-background">
+            <p><span class="bold">For the past 2 years</span> we've been pouring our souls into developing an intense and unforgettable indie title; drenched with old school ruthlessness, brutally dark, sinister aesthetic, and very unique, immersive gameplay mechanics!</p>
+
+            <p>As of this stage, we're <span class="bold">getting closer to releasing</span>, and bringing our game directly into your hands!</p>
+
+            <p><span class="bold">But we need your help</span>! We want to shoot for the stars, and try to have the very BEST game company name. Unfortunately, we're an extremely small team, so deciding a best amongst ourselves won't mean much. But together, together, we stand a chance! With your help, we'll be able to unanimously identify the best game company name the world has ever seen!</p>
+
+            <p><span class="bold">Please just give 5 minutes</span> to do our survey, and take part in our quest to choose the best game company name!</p>
+
+            <p><span class="bold">Thank You!</span></p>
+
+        </div>
+
+        <p class="red note">* Required</p>
+
+        <div class="gamer-type question">
+
+            <h3>Which of these game Genres do you like best? <span class="red">*</span></h3>
+
+            <p class="error">Please select one option from the list below.</p>
+
+            <div class="option">
+                <input type="radio" id="gamerType1" name="gameType" value="NMG"><label for="gamerType1">Not Much of a Gamer</label>
+            </div>
+
+            <div class="option">
+                <input type="radio" id="gamerType2" name="gameType" value="FPS"><label for="gamerType2">FPS</label>
+            </div>
+
+            <div class="option">
+                <input type="radio" id="gamerType3" name="gameType" value="ADV"><label for="gamerType3">Adventure</label>
+            </div>
+
+            <div class="option">
+                <input type="radio" id="gamerType4" name="gameType" value="RPG"><label for="gamerType4">RPG</label>
+            </div>
+
+            <div class="option">
+                <input type="radio" id="gamerType5" name="gameType" value="STRA"><label for="gamerType5">Strategy</label>
+            </div>
+
+            <div class="option">
+                <input type="radio" id="gamerType6" name="gameType" value="PUZ"><label for="gamerType6">Puzzle</label>
+            </div>
+
+            <div class="option">
+                <input type="radio" id="gamerType7" name="gameType" value="CARD"><label for="gamerType7">Card</label>
+            </div>
+
+            <div class="option">
+                <input type="radio" id="gamerType8" name="gameType" value="FIG"><label for="gamerType8">Figher</label>
+            </div>
+
+            <div class="option">
+                <input type="radio" id="gamerType9" name="gameType" value="SPO"><label for="gamerType9">Sports</label>
+            </div>
+
+            <div class="option">
+                <input type="radio" id="gamerType10" name="gameType" value="SIM"><label for="gamerType10">Simulation</label>
+            </div>
+
+            <div class="option">
+                <input type="radio" id="gamerType11" name="gameType" value="OTH"><label for="gamerType11">Other</label>
+            </div>
+        </div>
+
+        <div class="email-cont question">
+
+            <h3>Please input your Email address (prevents span & ONLY if desired, notifies you of results) <span class="red">*</span></h3>
+            <p class="error">Please input a email address</p>
+
+            <input type="text" class="email" placeholder="Your email">
+
+            <div class="captcha-cont">
+                <input type="checkbox" id="captchaCheck" name="captcha" class="captcha"/><label for="captchaCheck">I'm a Human</label>
+            </div>
+
+        </div>
+
+        <div class="sex-type question">
+
+            <h3>Are you Male or Female?</h3>
+
+            <div class="option">
+                <input type="radio" id="sexType1" name="sexType" value="MALE"><label for="sexType1">Male</label>
+            </div>
+
+            <div class="option">
+                <input type="radio" id="sexType2" name="sexType" value="FEMALE"><label for="sexType2">Female</label>
+            </div>
+
+        </div>
+
+        <div class="age-group question">
+
+            <h3>What age group do you fall in?</h3>
+
+            <div class="option">
+                <input type="radio" id="ageGroup1" name="ageGroup" value="17BELOW"><label for="ageGroup1">17 or Below</label>
+            </div>
+
+            <div class="option">
+                <input type="radio" id="ageGroup2" name="ageGroup" value="18TO24"><label for="ageGroup2">18 - 24</label>
+            </div>
+
+            <div class="option">
+                <input type="radio" id="ageGroup3" name="ageGroup" value="25TO35"><label for="ageGroup3">25 - 35</label>
+            </div>
+
+            <div class="option">
+                <input type="radio" id="ageGroup4" name="ageGroup" value="36TO45"><label for="ageGroup4">36 - 45</label>
+            </div>
+
+            <div class="option">
+                <input type="radio" id="ageGroup5" name="ageGroup" value="45ABOVE"><label for="ageGroup5">45 or above</label>
+            </div>
+
+        </div>
+
+        <div class="refer-type question">
+
+            <h3>How did you find our survey?</h3>
+
+            <div class="option">
+                <input type="radio" id="referType1" name="refer-type" value="FCBK"><label for="referType1">Facebook</label>
+            </div>
+
+            <div class="option">
+                <input type="radio" id="referType2" name="refer-type" value="INST"><label for="referType2">Instagram</label>
+            </div>
+
+            <div class="option">
+                <input type="radio" id="referType3" name="refer-type" value="REDD"><label for="referType3">Reddit</label>
+            </div>
+
+            <div class="option">
+                <input type="radio" id="referType4" name="refer-type" value="TWI"><label for="referType4">Twitter</label>
+            </div>
+
+            <div class="option">
+                <input type="radio" id="referType5" name="refer-type" value="GOOG"><label for="referType5">Google</label>
+            </div>
+
+            <div class="option">
+                <input type="radio" id="referType6" name="refer-type" value="PIN"><label for="referType6">Pinterest</label>
+            </div>
+
+            <div class="option">
+                <input type="radio" id="referType7" name="refer-type" value="OTH"><label for="referType7">Other</label>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="random-set section hidden">
+
+        <h1>Which of these game company names is your favourite? <span class="red">*</span></h1>
+
+        <p>Add Games, Studios, Inc, Software, whenever it fits / is applicable.</p>
+
+        <p class="error">Please choose at least one company name.</p>
+
+        <div class="option">
+            <input type="radio" id="option1" name="initialQuestion" value="OPTIONA"><label for="option1">Option A</label>
+        </div>
+
+        <div class="option">
+            <input type="radio" id="option2" name="initialQuestion" value="OPTIONB"><label for="option2">Option B</label>
+        </div>
+
+        <div class="option">
+            <input type="radio" id="option3" name="initialQuestion" value="OPTIONC"><label for="option3">Option C</label>
+        </div>
+
+        <div class="clear"></div>
+
+        <div class="pagination">
+            <span>1</span>
+            <span>/</span>
+            <span>4</span>
+        </div>
+
+    </div>
+
+    <div class="chosen-set section hidden">
+
+        <h1>Please rank your favorite names from 1st-4th, where <span class="underline">1st is your most favourite</span>, and <span class="underline">4th is your least favourite</span>. <span class="red">*</span></h1>
+
+        <p class="error">Please rank each option from 1st to 4th.</p>
+
+        <div class="chosen">
+            <span class="reset-choice underline hidden">Deselect Rank</span>
+            <select class="unaltered">
+                <option data-rank="null">Rank</option>
+                <option data-rank="1stChoice">1st</option>
+                <option data-rank="2ndChoice">2nd</option>
+                <option data-rank="3rdChoice">3rd</option>
+                <option data-rank="4thChoice">4th</option>
+
+            </select>
+            <span>Option A</span>
+        </div>
+
+        <div class="chosen">
+            <span class="reset-choice underline hidden">Deselect Rank</span>
+            <select class="unaltered">
+                <option data-rank="null">Rank</option>
+                <option data-rank="1stChoice">1st</option>
+                <option data-rank="2ndChoice">2nd</option>
+                <option data-rank="3rdChoice">3rd</option>
+                <option data-rank="4thChoice">4th</option>
+
+            </select>
+            <span>Option A</span>
+        </div>
+
+        <div class="chosen">
+            <span class="reset-choice underline hidden">Deselect Rank</span>
+            <select class="unaltered">
+                <option data-rank="null">Rank</option>
+                <option data-rank="1stChoice">1st</option>
+                <option data-rank="2ndChoice">2nd</option>
+                <option data-rank="3rdChoice">3rd</option>
+                <option data-rank="4thChoice">4th</option>
+
+            </select>
+            <span>Option A</span>
+        </div>
+
+        <div class="chosen">
+            <span class="reset-choice underline hidden">Deselect Rank</span>
+            <select class="unaltered">
+                <option data-rank="null">Rank</option>
+                <option data-rank="1stChoice">1st</option>
+                <option data-rank="2ndChoice">2nd</option>
+                <option data-rank="3rdChoice">3rd</option>
+                <option data-rank="4thChoice">4th</option>
+            </select>
+            <span>Option A</span>
+        </div>
+
+        <div class="clear"></div>
+
+    </div>
+
+    <div class="survey-end section hidden">
+
+        <h1>Thank You!</h1>
+
+        <h2>It's <span class="underline">because of your help</span>, that we're one step closer to choosing a company name!</h2>
+
+        <p>Interested in the final results, and want updates on our up-and-coming new game?</p>
+
+        <div class="option">
+            <input type="checkbox" id="notifyMe" name="notifyMe" checked><label for="notifyMe">Yes, I'd like to be notified of the final results, and/or of the new Souls Pokémon-like RPG game being released.</label>
+        </div>
+
+        <div class="option hidden change-email">
+            <span class="underline">Change Email for Notification?</span>
+            <input class='hidden' type="text" class="email" placeholder="Your email">
+        </div>
+
+        <div class="clear"></div>
+
+    </div>
+
+    <div class="optional section hidden">
+
+        <h1>Optional: Your Very Own Company's Name</h1>
+
+        <p>You've completed our survey! The next question is completely <span class="bold">optional / extra</span>, as such only proceed on forth if interested. Thanks Again!</p>
+
+        <div class="input optional">
+            <p>Want your very own game company name to shine with the other survey options? Submit it here, and if approved, have a chance to become the game company name we choose!</p>
+            <p>Our General Criteria - your submission should convey at least one of these attributes:</p>
+            <ul>
+                <li>Conveys Wittiness (Puns, Metaphors, etc) </li>
+                <li>Conveys Challenge</li>
+                <li>Conveys Humor</li>
+                <li>Geek Culture</li>
+                <li>Game Culture</li>
+                <li>Jap Culture</li>
+            </ul>
+
+            <input type="text" placeholder="Company Name" name="user-submitted"/>
+        </div>
+
+        <div class="clear"></div>
+
+    </div>
+
+    <div class="fully-completed hidden">
+
+        <h1 class="full">100% Completed</h1>
+        <h2>Thank you! Stay tuned for the results, and game updates!</h2>
+    </div>
+
+    <div class="please-share">
+
+        <div class="displaying">
+            <p>Please Share Our Survey</p>
+            <p class="quote"><span>"A person is a person no matter how small."</span></p>
+            <p class="quotee">- Dr.Seuss</p>
+            <div class="icons">
+
+                <a class="fb-xfbml-parse-ignore facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://companyblank.github.io/survey-quest/&amp;src=sdkpreparse" ></a>
+
+                <a class="twitter" target="_blank" href="http://twitter.com/share?text=Take Part In The Quest to Choose the Best Game Company Name!y&url=https://companyblank.github.io/survey-quest/&hashtags=gaming,games,rpg"></a>
+
+                <a class="whatsapp" target="_blank" href="https://wa.me/?text=Take%20Part%20In%20Our%20Quest%20to%20Choose%20the%20Best%20Game%20Company%20Name!https://companyblank.github.io/survey-quest" data-action="share/whatsapp/share"></a>
+
+                <a class="pinterest" target="_blank" href="http://pinterest.com/pin/create/button/?url=2Fcompanyblank.github.io%2Fsurvey-quest%2F&media=https://images.unsplash.com/photo-1528359645462-5ff224bf906e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80&description=Take%20Part%20In%20Our%20Quest%20to%20Choose%20the%20Best%20Game%20Company%20Name!"></a>
+
+                <a class="email" href="mailto:friendName@gmail.com?subject=Take%20Part%20In%20Our%20Quest%20to%20Choose%20the%20Best%20Game%20Company%20Name!"></a>
+            </div>
+            <span class="close">X</span>
+        </div>
+
+        <div class="minimized hidden">
+
+            <span class="clicked hidden">Thank You</span>
+            <span>Share +</span>
+        </div>
+
+    </div>
+
+    <div class="clear"></div>
+
+    <button class="submit start">Next</button>
+
+    <div class="attribution">
+        <span>Click here to view Page Attribution</span>
+        <span class="hidden">Click here to hide Page Attribution</span>
+        <div class="hidden">
+            <p>Page Background created by pikisuperstar from www.freepik.com</p>
+            <p>Share Icons created by s.salvador from www.freepik.com</p>
+        </div>
+    </div>
+
+</div>
+
+<div class="notification end">
+    <div class="catMsg">
+        <h2>100% COMPLETED</h2>
+
+        <div class="cat-welcome">
+
+            <div class="message">
+                <p>Thank You! And Stay Tuned!</p>
+            </div>
+
+            <div class="cat">
+                <span class="eyes left">^</span>
+                <span class="eyes right">^</span>
+                <span class="mouth"></span>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="notification survey-progress">
+
+    <div class="sect-complete">
+        <h3 class="notify-complete">Survey Start Completed</h3>
+        <a href="#" class="button"><span class="checkmark"></span></a>
+    </div>
+
+    <div class="progress-circle">
+        <h3 class="notify-complete">Survey Completion:</h3>
+        <canvas id="complete" width="70" height="70"></canvas>
+        <canvas id="progressCircle" width="70" height="70"></canvas>
+    </div>
+
+</div>
+
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/ss.min.js"></script>
+<script src="js/script.min.js"></script>
+<!--<script src="jss/script.js"></script>-->
+<script src="js/pp.min.js"></script>
+<!--<script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>-->
+
+
+</body></html>
+
